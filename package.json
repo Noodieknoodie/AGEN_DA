@@ -1,0 +1,12 @@
+{
+  "name": "agenda-generator",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "tabs",
+    "api"
+  ],
+  "scripts": {
+    "build": "npm run build -w tabs && npm run build -w api"
+  }
+}

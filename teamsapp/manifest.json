@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.17",
+  "version": "1.0.0",
+  "id": "${{TEAMS_APP_ID}}",
+  "packageName": "com.hohimer.agenda",
+  "developer": {
+    "name": "Hohimer Wealth Management",
+    "websiteUrl": "https://hohimerwealth.com",
+    "privacyUrl": "https://hohimerwealth.com/privacy",
+    "termsOfUseUrl": "https://hohimerwealth.com/terms"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Agenda",
+    "full": "AI Agenda Generator"
+  },
+  "description": {
+    "short": "Generate meeting agendas from PDFs",
+    "full": "Upload performance PDFs and instantly receive formatted Word agendas."
+  },
+  "accentColor": "#0078D4",
+  "staticTabs": [
+    {
+      "entityId": "agendaTab",
+      "name": "Agenda Generator",
+      "contentUrl": "${{TAB_ENDPOINT}}",
+      "websiteUrl": "${{TAB_ENDPOINT}}",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": ["identity"],
+  "validDomains": ["${TAB_DOMAIN}"]
+}

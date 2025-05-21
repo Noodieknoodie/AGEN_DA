@@ -1,0 +1,22 @@
+{
+  "name": "agenda-generator-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/identity": "3.3.0",
+    "@azure/storage-blob": "12.15.0",
+    "@azure/functions": "4.0.0",
+    "axios": "1.5.0",
+    "busboy": "1.6.0",
+    "docx-templates": "4.11.0",
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.5.3"
+  }
+}
