@@ -13,24 +13,34 @@ This is a custom Microsoft Teams **Tab App** named **AgendaProjectAIFoundry** fo
     * **Client Meeting Mode**: PDF upload, structured fields, advisor-specific settings.
     * **General Agenda Mode**: Freeform text inputs, no PDF.
 
-* **Azure OpenAI (GPT-4o) Agent**
+────────────────────────────────────────────────────────────
+1. ORG / SUBSCRIPTION INFO
+Directory: Hohimer Wealth Management Subscription: Agenda_Teams_Subscription Subscription ID: e2ed8f3b-7c6a-46b9-a829-65aad1898d3e Resource Group: agenda_teams_rgroup Resource Name: agenda-eknud Location: eastus2
 
-  * Deployed in Azure AI Foundry.
-  * Extracts data directly from PDFs.
-  * Endpoint details:
+────────────────────────────────────────────────────────────
 
-    * **Project endpoint**:
-      `https://agendaprojectaifoundry-resource.services.ai.azure.com/api/projects/agendaprojectaifoundry`
-    * **Azure OpenAI endpoint**:
-      `https://agendaprojectaifoundry-resource.openai.azure.com/`
-    * **Azure AI Services endpoint**:
-      `https://agendaprojectaifoundry-resource.cognitiveservices.azure.com/`
-    * **Agent endpoint**:
-      `https://eknud-mawv9hve-westus3.cognitiveservices.azure.com/`
-    * **Target URL for completions**:
-      `https://agendaprojectaifoundry-resource.cognitiveservices.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview`
-  * Authentication via API Key.
-  * Deployment named `gpt-4.1`, global standard, rate limit: 50,000 tokens/min, 50 requests/min.
+2. CORE ENDPOINTS
+Azure AI Foundry Project Endpoint: https://eknud-mayiobab-eastus2.services.ai.azure.com/api/projects/agenda-eknud
+
+Azure OpenAI Endpoint: https://eknud-mayiobab-eastus2.openai.azure.com/
+
+Azure AI Services Endpoint: https://eknud-mayiobab-eastus2.cognitiveservices.azure.com/
+
+Speech to Text Endpoint: https://eastus2.stt.speech.microsoft.com
+
+Text to Speech Endpoint: https://eastus2.tts.speech.microsoft.com
+
+────────────────────────────────────────────────────────────
+
+3. MAIN MODEL DEPLOYMENT
+Name: agenda-gpt-4.1 Model: gpt-4.1 (2025-04-14) Endpoint: https://eknud-mayiobab-eastus2.cognitiveservices.azure.com/openai/deployments/agenda-gpt-4.1/chat/completions?api-version=2025-01-01-preview Key: ENTER KEY HERE
+
+Tokens/minute: 50,000 Requests/minute: 50 Lifecycle: GenerallyAvailable until Apr 10, 2026
+
+────────────────────────────────────────────────────────────
+
+4. AGENT INFO
+Agent Name: AGENDAAGENT2 Agent ID: asst_ZpZ2Evphmzq1smdI6iDqCiPl Agent Model: agenda-gpt-4.1 Agent Tools: Files
 
 * **Microsoft Teams App**
 
@@ -48,11 +58,7 @@ This is a custom Microsoft Teams **Tab App** named **AgendaProjectAIFoundry** fo
 * JSON populates Word agenda document, styled appropriately.
 * Advisor downloads completed agenda directly in Teams.
 
-### Deployment Specifics:
-
-* Azure Subscription: `Agenda_Teams_Subscription` (westus region)
-* Subscription ID: `e2ed8f3b-7c6a-46b9-a829-65aad1898d3e`
+---
 * No OCR needed—Azure OpenAI agent directly ingests PDFs.
 * Azure agent fully provisioned—just needs integration.
 
-This setup leverages Azure-native integrations, Teams Toolkit best practices, and modern React frontend development to ensure a smooth, scalable deployment.
